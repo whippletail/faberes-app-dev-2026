@@ -43,6 +43,7 @@
 
 
 
+
 <main class="dashboard">
     <!-- Progress -->
     <section class="card progress-card">
@@ -66,6 +67,7 @@
     </section>
 
 
+
     <!-- Tasks -->
     <section class="card task-section">
         <h2>
@@ -73,14 +75,21 @@
         </h2>
 
         <div id="taskList">
+
             <p class="empty-message">
                 ✨ No tasks yet
                 <br>
                 Start organizing your day!
             </p>
+
         </div>
+
     </section>
+
 </main>
+
+
+
 
 <footer>
 
@@ -90,18 +99,27 @@
 
 </footer>
 
+
+
+
 <!-- MODAL -->
+
 <div id="taskModal" class="modal">
+
 <div class="modal-content">
+
 <span id="closeModal" class="close-btn">
 
 &times;
 
 </span>
 
-<h2>
+
+<h2 id="modalTitle">
 Create Task
 </h2>
+
+
 
 <form id="taskForm">
 
@@ -115,38 +133,58 @@ type="text"
 id="taskInput"      
 placeholder="Enter your task">
 
+
+
 <p id="errorMessage"></p>
+
+
 
 <label>
 Priority
 </label>
 
+
+
 <select id="priorityInput">
+
 
 <option value="High">
 High
 </option>
 
+
 <option value="Medium">
 Medium
 </option>
+
 
 <option value="Low">
 Low
 </option>
 
 
+
 </select>
 
 
+
+
 <button type="submit" class="save-task-btn">
-Add Task
+
+Save Task
+
 </button>
 
 
+
 </form>
+
+
 </div>
+
 </div>
+
+
 
 
 <script src="script.js"></script>
