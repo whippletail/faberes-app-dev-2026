@@ -15,8 +15,6 @@ body {
     color: #333;
 }
 
-
-/* Make form elements use Poppins too */
 button,
 input,
 select,
@@ -37,7 +35,7 @@ textarea {
 }
 
 
-/* Logo image */
+
 .logo {
     width: 200px;
     height: auto;
@@ -50,9 +48,7 @@ textarea {
 }
 
 
-/* =========================
-   BUTTONS
-========================= */
+/*buttons*/
 
 button {
     cursor: pointer;
@@ -77,9 +73,7 @@ button {
 }
 
 
-/* =========================
-   DASHBOARD
-========================= */
+/*db*/
 
 .dashboard {
     display: grid;
@@ -88,9 +82,6 @@ button {
 }
 
 
-/* =========================
-   CARDS
-========================= */
 
 .card {
     background: white;
@@ -199,18 +190,8 @@ button {
 }
 
 
-/* Optional description styling */
-.task-description {
-    color: #777;
-    font-size: 14px;
-    margin: 8px 0 12px;
-    line-height: 1.5;
-}
 
 
-/* =========================
-   PRIORITY BADGES
-========================= */
 
 .priority-badge {
     padding: 7px 15px;
@@ -238,9 +219,7 @@ button {
 }
 
 
-/* =========================
-   TASK ACTIONS
-========================= */
+
 
 .task-actions {
     display: flex;
@@ -248,14 +227,13 @@ button {
 }
 
 
+.edit-btn,
 .complete-btn,
-.delete-btn {
-    width: 45px;
-    height: 40px;
-    border-radius: 12px;
-    transition: 0.2s;
+.delete-btn{
+width:45px;
+height:40px;
+border-radius:12px;
 }
-
 
 .complete-btn {
     background: #d8f3d2;
@@ -432,5 +410,20 @@ textarea {
     .modal-content {
         width: 90%;
     }
+
+}
+
+/* EDIT BUTTON */
+
+.edit-btn{
+
+background:#e6dcff;
+
+}
+
+
+.edit-btn:hover{
+
+transform:scale(1.05);
 
 }
