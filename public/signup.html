@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="card">
+    <h1>Sign Up</h1>
+
+    <div id="message" class="message" role="alert" hidden></div>
+
+    <!-- novalidate lets empty fields reach the server so its 400 response is shown -->
+    <form id="signup-form" novalidate>
+      <div class="field">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" autocomplete="email">
+        <p id="email-error" class="field-error" hidden></p>
+      </div>
+      <div class="field">
+        <label for="username">Username</label>
+        <input id="username" name="username" type="text" autocomplete="username">
+        <p id="username-error" class="field-error" hidden></p>
+      </div>
+      <div class="field">
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" autocomplete="new-password">
+        <p id="password-error" class="field-error" hidden></p>
+      </div>
+      <button class="btn" type="submit">Create Account</button>
+    </form>
+
+    <p class="alt">Already have an account?</p>
+    <a class="btn" href="login.html">Back to Login</a>
+  </main>
+
+  <script src="auth.js"></script>
+  <script>setupAuthForm('signup-form', '/api/signup');</script>
+</body>
+</html>

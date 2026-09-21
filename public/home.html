@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="card">
+    <h1 id="greeting">Hello.</h1>
+    <p id="details" class="lead"></p>
+    <button id="logout" class="btn" type="button">Log Out</button>
+  </main>
+
+  <script>
+    // Demo-only guard: the user is remembered in sessionStorage, not a real session.
+    let user = null;
+    try {
+      user = JSON.parse(sessionStorage.getItem('user'));
+    } catch (err) {}
+
+    if (!user) {
+      window.location.replace('login.html');
+    } else {
+      document.getElementById('greeting').textContent = `Hello, ${user.username}.`;
+      document.getElementById('details').textContent = `You're logged in as ${user.email}.`;
+    }
+
+    document.getElementById('logout').addEventListener('click', () => {
+      sessionStorage.removeItem('user');
+      window.location.href = 'login.html';
+    });
+  </script>
+</body>
+</html>

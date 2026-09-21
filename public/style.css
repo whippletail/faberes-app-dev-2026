@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --black: #000;
+  --ink: #111;
+  --button: #333;
+  --border: #767676;
+  --muted: #595959;
+  --page: #f3f3f3;
+  --card: #fff;
+  --font: 'Inter', 'Helvetica Neue', Arial, system-ui, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  font-family: var(--font);
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--ink);
+  background: var(--page);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- card ---------- */
+
+.card {
+  width: 100%;
+  max-width: 480px;
+  padding: clamp(1.75rem, 6vw, 3rem);
+  background: var(--card);
+  border-radius: 16px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06), 0 12px 32px rgba(0, 0, 0, 0.06);
+}
+
+.card h1 {
+  margin: 0 0 2rem;
+  text-align: center;
+  font-size: clamp(2rem, 8vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  overflow-wrap: anywhere;
+}
+
+.card .lead {
+  margin: -0.75rem 0 2rem;
+  text-align: center;
+  color: var(--muted);
+}
+
+/* ---------- form ---------- */
+
+.field {
+  margin-bottom: 1.25rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+input {
+  width: 100%;
+  padding: 1rem;
+  font: inherit;
+  color: var(--black);
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  transition: border-color 0.15s ease;
+}
+
+input:hover {
+  border-color: var(--black);
+}
+
+input:focus-visible {
+  outline: 2px solid var(--black);
+  outline-offset: 2px;
+  border-color: var(--black);
+}
+
+input[aria-invalid='true'] {
+  border: 2px solid var(--black);
+  padding: calc(1rem - 1px);
+}
+
+/* ---------- buttons ---------- */
+
+.btn {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  font: inherit;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  background: var(--button);
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.btn:hover {
+  background: var(--black);
+}
+
+.btn:active {
+  transform: scale(0.99);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--black);
+  outline-offset: 3px;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: progress;
+}
+
+.alt {
+  margin: 1.5rem 0 1rem;
+  text-align: center;
+  font-size: 1.05rem;
+}
+
+/* ---------- messages ---------- */
+
+.message {
+  margin-bottom: 1.5rem;
+  padding: 0.85rem 1rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #fff;
+  background: var(--black);
+  border-radius: 6px;
+}
+
+.message[hidden] {
+  display: none;
+}
+
+/* ---------- inline field errors ---------- */
+
+.field-error {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.5rem 0 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--black);
+}
+
+.field-error::before {
+  content: '!';
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 1.1rem;
+  height: 1.1rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #fff;
+  background: var(--black);
+  border-radius: 50%;
+}
+
+.field-error[hidden] {
+  display: none;
+}
