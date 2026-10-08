@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Users</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 480px; margin: 3rem auto; padding: 0 1rem; }
+    nav a { margin-right: 1rem; }
+    li { margin-bottom: .75rem; }
+    small { color: #555; display: block; }
+    button { padding: .6rem 1rem; font-size: 1rem; cursor: pointer; margin-top: 1.5rem; }
+  </style>
+</head>
+<body>
+  <nav><a href="/dashboard.html">Dashboard</a><a href="/about.html">About Me</a><a href="/users.html">Users</a></nav>
+  <h1>Registered Users</h1>
+  <p id="count">Loading...</p>
+  <ul id="list"></ul>
+  <button id="logout">Log out</button>
+
+  <script src="/js/api.js"></script>
+  <script>
+    apiGet("/api/users").then(({ count, users }) => {
+      document.getElementById("count").textContent = `${count} registered user(s)`;
+      const list = document.getElementById("list");
+      users.forEach((u) => {
+        const li = document.createElement("li");
+        const name = document.createElement("strong");
+        name.textContent = u.username;
+        const bio = document.createElement("small");
+        bio.textContent = u.bio || "No bio yet.";
+        li.append(name, bio);
+        list.appendChild(li);
+      });
+    });
+  </script>
+</body>
+</html>
