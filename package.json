@@ -1,0 +1,9 @@
+{
+  "name": "blog-platform",
+  "private": true,
+  "scripts": {
+    "install:all": "npm --prefix auth-server install && npm --prefix blog-api install",
+    "auth": "npm --prefix auth-server start",
+    "blog": "npm --prefix blog-api start"
+  }
+}

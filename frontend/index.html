@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Hogwarts Daily — Magical Blog</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Top Navigation Header -->
+  <header class="navbar">
+    <div class="brand-title">
+      ⚡ Hogwarts <span>Daily</span>
+    </div>
+    <div class="nav-actions" id="nav-actions">
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Status Notification Banner -->
+    <div id="status-message" class="hidden"></div>
+
+    <!-- Auth Forms (Login / Register) -->
+    <section id="auth-section" class="auth-card hidden">
+      <h2 id="auth-title">Welcome to the Archives</h2>
+      <form id="auth-form">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" class="form-control" placeholder="e.g. HarryPotter" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" class="form-control" placeholder="••••••••" required>
+        </div>
+        <div class="form-group hidden" id="role-group">
+          <label for="role">Select House Role</label>
+          <select id="role" class="form-control">
+            <option value="reader">Reader</option>
+            <option value="author">Author</option>
+            <option value="admin">Admin</option>
+          </select>
+        </div>
+        <button type="submit" id="auth-submit-btn" class="btn btn-primary" style="width: 100%;">Log In</button>
+      </form>
+    </section>
+
+    <!-- Post Creator / Editor Section -->
+    <section id="editor-section" class="editor-card hidden">
+      <h2 id="editor-title" class="section-title">Compose Quill Entry</h2>
+      <form id="post-form">
+        <input type="hidden" id="edit-post-id">
+        <div class="form-group">
+          <label for="post-title-input">Article Title</label>
+          <input type="text" id="post-title-input" class="form-control" placeholder="Title of your post..." required>
+        </div>
+        <div class="form-group">
+          <label for="post-content-input">Content</label>
+          <textarea id="post-content-input" class="form-control" placeholder="Write your post here..." required></textarea>
+        </div>
+        <div style="display: flex; gap: 0.5rem;">
+          <button type="submit" class="btn btn-gold">Publish Post</button>
+          <button type="button" id="cancel-edit-btn" class="btn btn-outline hidden">Cancel</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Filter Navigation -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+      <h2 class="section-title" style="margin-bottom: 0;">Recent Posts</h2>
+      <div>
+        <button id="btn-all-posts" class="btn btn-outline">All Posts</button>
+        <button id="btn-my-posts" class="btn btn-outline hidden">My Posts</button>
+      </div>
+    </div>
+
+    <!-- Feed Container -->
+    <div id="posts-container">
+      <!-- Blog posts render here dynamically -->
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>~

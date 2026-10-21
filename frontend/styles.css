@@ -1,0 +1,257 @@
+/* Google Fonts Import for modern editorial typography */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Gryffindor / Magical Modern Color Palette */
+  --bg-color: #fcf9f2;          /* Soft Cream Parchment background */
+  --card-bg: #ffffff;           /* Clean white card background */
+  --primary-maroon: #6b1426;    /* Deep Gryffindor Maroon */
+  --primary-hover: #520e1c;     /* Darker Maroon for active states */
+  --gold-accent: #c59b27;       /* Warm Warm Gold accents */
+  --gold-hover: #a37f1e;        /* Darker gold */
+  --text-dark: #2b1f1d;         /* Rich charcoal-brown text */
+  --text-muted: #6e5e5b;        /* Muted brown for secondary text */
+  --border-color: #ebdccb;     /* Soft warm border */
+  --shadow-sm: 0 2px 8px rgba(107, 20, 38, 0.05);
+  --shadow-md: 0 8px 24px rgba(107, 20, 38, 0.08);
+  --radius-lg: 16px;
+  --radius-md: 10px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-dark);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* Header & Navigation Bar */
+.navbar {
+  background: var(--primary-maroon);
+  color: #ffffff;
+  padding: 1.25rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3px solid var(--gold-accent);
+  box-shadow: var(--shadow-md);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.brand-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.brand-title span {
+  color: var(--gold-accent);
+}
+
+.nav-actions {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+/* Main Container */
+.container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+
+/* Auth Banner & Forms */
+.auth-card, .post-card, .editor-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.auth-card {
+  border-top: 4px solid var(--gold-accent);
+}
+
+.auth-card h2, .section-title {
+  font-family: 'Cinzel', serif;
+  color: var(--primary-maroon);
+  margin-bottom: 1rem;
+}
+
+/* Buttons */
+.btn {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 600;
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--radius-md);
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.95rem;
+}
+
+.btn-primary {
+  background-color: var(--primary-maroon);
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+.btn-gold {
+  background-color: var(--gold-accent);
+  color: #ffffff;
+}
+
+.btn-gold:hover {
+  background-color: var(--gold-hover);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-dark);
+}
+
+.btn-outline:hover {
+  background-color: #f5ebe0;
+}
+
+.btn-danger {
+  background-color: #a82323;
+  color: #ffffff;
+}
+
+.btn-danger:hover {
+  background-color: #821919;
+}
+
+/* Form Inputs */
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: var(--text-dark);
+  font-size: 0.9rem;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1rem;
+  background-color: var(--bg-color);
+  color: var(--text-dark);
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--primary-maroon);
+  box-shadow: 0 0 0 3px rgba(107, 20, 38, 0.1);
+}
+
+textarea.form-control {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Blog Feed Posts */
+.post-card {
+  position: relative;
+  border-left: 4px solid var(--primary-maroon);
+}
+
+.post-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.post-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.5rem;
+  color: var(--primary-maroon);
+  margin-bottom: 0.5rem;
+}
+
+.post-meta {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.badge-role {
+  background-color: #f3e9db;
+  color: var(--primary-maroon);
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.post-content {
+  font-size: 1rem;
+  color: var(--text-dark);
+  white-space: pre-wrap;
+}
+
+.post-actions {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px dashed var(--border-color);
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Utility / Status Messages */
+.alert {
+  padding: 0.8rem 1rem;
+  border-radius: var(--radius-md);
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.alert-error {
+  background-color: #fce8e8;
+  color: #a82323;
+  border: 1px solid #f7c6c6;
+}
+
+.alert-success {
+  background-color: #edf7ed;
+  color: #1e4620;
+  border: 1px solid #c7e6c7;
+}
+
+.hidden {
+  display: none !important;
+}
